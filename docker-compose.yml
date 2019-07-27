@@ -1,0 +1,17 @@
+version: '3.2'
+
+services:
+  frontend:
+    container_name: weatherApp-frontend
+    build:
+      context: ./frontend
+    image: wapp_frontend
+
+  nginx:
+    container_name: weatherApp-nginx
+    build:
+      context: ./nginx
+    image: wapp_nginx
+    depends_on:
+      - frontend
+    restart: always

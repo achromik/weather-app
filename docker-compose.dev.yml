@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+  frontend:
+    build:
+      dockerfile: dev.Dockerfile
+    command: yarn start
+    restart: unless-stopped
+    volumes:
+      - ./frontend/src:/frontend/src
+
+  nginx:
+    build:
+      dockerfile: Dockerfile
+    ports:
+       - 8050:80
