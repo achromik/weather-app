@@ -3,6 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "antd": "^3.20.7",
         "history": "^4.9.0",
         "react": "^16.8.6",
         "react-dom": "^16.8.6",
@@ -15,9 +16,10 @@
         "redux-thunk": "^2.3.0"
     },
     "scripts": {
-        "start": "react-app-rewired start",
-        "build": "react-app-rewired build",
-        "test": "react-app-rewired test",
+        "start": " react-app-rewired start",
+        "build": " react-app-rewired build",
+        "test": "NODE_PATH=./ react-app-rewired test",
+        "test:watch": "NODE_PATH=./ react-app-rewired test --watchAll",
         "eject": "react-app-rewired eject"
     },
     "eslintConfig": {
