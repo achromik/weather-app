@@ -1,8 +1,0 @@
-{
-    "path-autocomplete.pathMappings": {
-        "Components/*": ["./src/components/*"],
-        "@src/*": ["./src/*"]
-    },
-    "editor.tabSize": 4,
-    "editor.formatOnSave": true
-}
