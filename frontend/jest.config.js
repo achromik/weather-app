@@ -5,5 +5,5 @@ module.exports = {
     },
     moduleFileExtensions: ['js', 'jsx', 'json'],
     moduleDirectories: ['node_modules'],
-    // roots: ['.'],
+    setupFilesAfterEnv: ['<rootDir>/src/setupTests.js'],
 };
