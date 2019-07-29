@@ -1,19 +1,32 @@
 import React from 'react';
-import { Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-import { history } from 'src/config/history';
-export const Root = () => (
-    <Router history={history}>
-        <Switch>
-            <Route exact path="/" component={<div>Homepage</div>} />
-            <Route
-                path="/forecast"
-                component={
-                    <div>
-                        <h1>forecast</h1>
-                    </div>
-                }
-            />
-        </Switch>
-    </Router>
+export const Routes = () => (
+    <Switch>
+        <Route
+            exact
+            path="/"
+            component={() => (
+                <div>
+                    <h1>Temporary: HomePage</h1>
+                </div>
+            )}
+        />
+        <Route
+            path="/weather"
+            component={() => (
+                <div>
+                    <h1>Temporary: Coords Weather Page</h1>
+                </div>
+            )}
+        />
+        <Route
+            path="/forecast"
+            component={() => (
+                <div>
+                    <h1>Temporary: Forecast Page</h1>
+                </div>
+            )}
+        />
+    </Switch>
 );
