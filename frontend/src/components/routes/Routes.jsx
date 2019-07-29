@@ -1,17 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import HomePage from 'src/components/homePage/HomePage';
+
 export const Routes = () => (
     <Switch>
-        <Route
-            exact
-            path="/"
-            component={() => (
-                <div>
-                    <h1>Temporary: HomePage</h1>
-                </div>
-            )}
-        />
+        <Route exact path="/" component={HomePage} />
         <Route
             path="/weather"
             component={() => (

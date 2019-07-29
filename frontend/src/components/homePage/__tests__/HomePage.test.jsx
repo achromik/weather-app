@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { shallowToJson } from 'enzyme-to-json';
 
 import { HomePage } from '../HomePage';
 
@@ -63,21 +64,21 @@ const mockFetchingDataProps = {
 describe('HomePage container', () => {
     it('renders', () => {
         const wrapper = shallow(<HomePage {...mockProps} />);
-        expect(wrapper).toMatchSnapshot();
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('renders with no weather data', () => {
         const wrapper = shallow(<HomePage {...mockProps} data={undefined} />);
-        expect(wrapper).toMatchSnapshot();
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('renders with fetching error', () => {
         const wrapper = shallow(<HomePage {...mockErrorProps} />);
-        expect(wrapper).toMatchSnapshot();
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('renders while data is fetching', () => {
         const wrapper = shallow(<HomePage {...mockFetchingDataProps} />);
-        expect(wrapper).toMatchSnapshot();
+        expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 });

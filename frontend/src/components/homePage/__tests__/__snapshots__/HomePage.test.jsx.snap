@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage container renders 1`] = `
+<Fragment>
+  <h2>
+    Home page
+  </h2>
+  <Search
+    allowClear={true}
+    enterButton={false}
+    onSearch={[Function]}
+    placeholder="large size"
+    size="large"
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />
+  <div>
+    <p>
+      City: 
+      London
+    </p>
+    <p>
+      Clouds: 
+      90
+      %
+    </p>
+  </div>
+</Fragment>
+`;
+
+exports[`HomePage container renders while data is fetching 1`] = `
+<Fragment>
+  <h2>
+    Home page
+  </h2>
+  <Search
+    allowClear={true}
+    enterButton={false}
+    onSearch={[Function]}
+    placeholder="large size"
+    size="large"
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />
+  <div>
+    Loading data...
+  </div>
+</Fragment>
+`;
+
+exports[`HomePage container renders with fetching error 1`] = `
+<Fragment>
+  <h2>
+    Home page
+  </h2>
+  <Search
+    allowClear={true}
+    enterButton={false}
+    onSearch={[Function]}
+    placeholder="large size"
+    size="large"
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />
+  <ErrorBox
+    message="city not found"
+  />
+</Fragment>
+`;
+
+exports[`HomePage container renders with no weather data 1`] = `
+<Fragment>
+  <h2>
+    Home page
+  </h2>
+  <Search
+    allowClear={true}
+    enterButton={false}
+    onSearch={[Function]}
+    placeholder="large size"
+    size="large"
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />
+</Fragment>
+`;
