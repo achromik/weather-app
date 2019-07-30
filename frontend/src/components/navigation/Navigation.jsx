@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Menu, Icon } from 'antd';
 
 import { sites } from 'src/config/sites';
+
 export const Navigation = () => (
     <Menu mode="horizontal">
         {sites.map(site => (
