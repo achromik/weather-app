@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HomePage container renders 1`] = `
-<Fragment>
+<styled.div>
   <h2>
-    Home page
+    Weather App
   </h2>
   <Search
     allowClear={true}
     enterButton={false}
     onSearch={[Function]}
-    placeholder="large size"
+    placeholder="Enter city name..."
     size="large"
     style={
       Object {
@@ -17,30 +17,20 @@ exports[`HomePage container renders 1`] = `
       }
     }
   />
-  <div>
-    <p>
-      City: 
-      London
-    </p>
-    <p>
-      Clouds: 
-      90
-      %
-    </p>
-  </div>
-</Fragment>
+  <Weather />
+</styled.div>
 `;
 
 exports[`HomePage container renders while data is fetching 1`] = `
-<Fragment>
+<styled.div>
   <h2>
-    Home page
+    Weather App
   </h2>
   <Search
     allowClear={true}
     enterButton={false}
     onSearch={[Function]}
-    placeholder="large size"
+    placeholder="Enter city name..."
     size="large"
     style={
       Object {
@@ -51,19 +41,19 @@ exports[`HomePage container renders while data is fetching 1`] = `
   <div>
     Loading data...
   </div>
-</Fragment>
+</styled.div>
 `;
 
 exports[`HomePage container renders with fetching error 1`] = `
-<Fragment>
+<styled.div>
   <h2>
-    Home page
+    Weather App
   </h2>
   <Search
     allowClear={true}
     enterButton={false}
     onSearch={[Function]}
-    placeholder="large size"
+    placeholder="Enter city name..."
     size="large"
     style={
       Object {
@@ -74,19 +64,19 @@ exports[`HomePage container renders with fetching error 1`] = `
   <ErrorBox
     message="city not found"
   />
-</Fragment>
+</styled.div>
 `;
 
 exports[`HomePage container renders with no weather data 1`] = `
-<Fragment>
+<styled.div>
   <h2>
-    Home page
+    Weather App
   </h2>
   <Search
     allowClear={true}
     enterButton={false}
     onSearch={[Function]}
-    placeholder="large size"
+    placeholder="Enter city name..."
     size="large"
     style={
       Object {
@@ -94,5 +84,5 @@ exports[`HomePage container renders with no weather data 1`] = `
       }
     }
   />
-</Fragment>
+</styled.div>
 `;
