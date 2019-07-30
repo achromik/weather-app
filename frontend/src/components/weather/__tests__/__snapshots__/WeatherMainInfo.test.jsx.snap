@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WeatherMainInfo renders 1`] = `
+<styled.div>
+  <styled.p>
+    Warsaw
+    , 
+    PL
+  </styled.p>
+  <TemperatureWithIcon
+    icon="01d"
+    temp={
+      Object {
+        "humidity": 73,
+        "pressure": 1006,
+        "temp": 25.02,
+        "temp_max": 27.22,
+        "temp_min": 22.78,
+      }
+    }
+  />
+</styled.div>
+`;
