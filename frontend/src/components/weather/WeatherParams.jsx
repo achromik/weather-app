@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { weatherDataSelector } from 'src/features/weather/selectors/weatherSelectors';
-import { Wrapper } from 'src/common/Wrapper';
+import { Wrapper } from 'src/common/components/Wrapper';
 import { colors } from 'src/config/variables';
 
 const Row = styled.div`
