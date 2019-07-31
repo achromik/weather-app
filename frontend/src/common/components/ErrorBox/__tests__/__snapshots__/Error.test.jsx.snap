@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBox component renders 1`] = `
+<div>
+  <Alert
+    banner={true}
+    closable={true}
+    message="City not found"
+    showIcon={true}
+    type="error"
+  />
+</div>
+`;

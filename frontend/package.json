@@ -1,0 +1,49 @@
+{
+    "name": "weather-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "antd": "^3.20.7",
+        "history": "^4.9.0",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-redux": "^7.1.0",
+        "react-router": "^5.0.1",
+        "react-router-dom": "^5.0.1",
+        "react-scripts": "3.0.1",
+        "redux": "^4.0.4",
+        "redux-devtools-extension": "^2.13.8",
+        "redux-thunk": "^2.3.0",
+        "styled-components": "^4.3.2"
+    },
+    "scripts": {
+        "start": " react-app-rewired start",
+        "build": " react-app-rewired build",
+        "test": "NODE_PATH=./ react-app-rewired test",
+        "test:watch": "NODE_PATH=./ react-app-rewired test --watchAll",
+        "eject": "react-app-rewired eject"
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "customize-cra": "^0.4.1",
+        "enzyme": "^3.10.0",
+        "enzyme-adapter-react-16": "^1.14.0",
+        "enzyme-to-json": "^3.3.5",
+        "prettier": "^1.18.2",
+        "react-app-rewired": "^2.1.3"
+    }
+}

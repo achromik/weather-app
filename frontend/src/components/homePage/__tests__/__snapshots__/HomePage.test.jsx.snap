@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage container renders 1`] = `
+<styled.div>
+  <h2>
+    Weather App
+  </h2>
+  <Search
+    allowClear={true}
+    enterButton={false}
+    onSearch={[Function]}
+    placeholder="Enter city name..."
+    size="large"
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />
+  <Weather />
+</styled.div>
+`;
+
+exports[`HomePage container renders while data is fetching 1`] = `
+<styled.div>
+  <h2>
+    Weather App
+  </h2>
+  <Search
+    allowClear={true}
+    enterButton={false}
+    onSearch={[Function]}
+    placeholder="Enter city name..."
+    size="large"
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />
+  <div>
+    Loading data...
+  </div>
+</styled.div>
+`;
+
+exports[`HomePage container renders with fetching error 1`] = `
+<styled.div>
+  <h2>
+    Weather App
+  </h2>
+  <Search
+    allowClear={true}
+    enterButton={false}
+    onSearch={[Function]}
+    placeholder="Enter city name..."
+    size="large"
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />
+  <ErrorBox
+    message="city not found"
+  />
+</styled.div>
+`;
+
+exports[`HomePage container renders with no weather data 1`] = `
+<styled.div>
+  <h2>
+    Weather App
+  </h2>
+  <Search
+    allowClear={true}
+    enterButton={false}
+    onSearch={[Function]}
+    placeholder="Enter city name..."
+    size="large"
+    style={
+      Object {
+        "width": 200,
+      }
+    }
+  />
+</styled.div>
+`;
