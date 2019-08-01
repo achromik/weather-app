@@ -1,58 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import styled from 'styled-components';
 import { Input } from 'antd';
-import { sizes, breakpoints } from 'src/config/variables';
 
+import { PageWrapper } from 'src/common/components/PageWrapper';
 import { fetchCityWeather } from 'src/features/weather/actions/weatherActions';
 import {
-    isWeatherFetchingSelector,
-    weatherDataSelector,
-    weatherErrorSelector,
-    weatherFetchedSuccessfullySelector,
-} from 'src/features/weather/selectors/weatherSelectors';
+    isWeathersListFetchingSelector,
+    weathersListDataSelector,
+    weathersListErrorSelector,
+    weathersListFetchedSuccessfullySelector,
+} from 'src/features/weather/selectors/weathersListSelectors';
 import { ErrorBox } from 'src/common/components/ErrorBox/ErrorBox';
-import { Weather } from 'src/components/weather/Weather';
+import { SectionHeader } from 'src/common/components/SectionHeader';
+import WeathersList from 'src/components/weathersList/WeathersList';
 
 const { Search } = Input;
 
-const Wrapper = styled.div`
-    display: flex;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: ${sizes.padding.xs};
-
-    ${breakpoints.md} {
-        padding: ${sizes.padding.lg};
-    }
-`;
-
-export const HomePage = ({ isFetching, fetchedSuccessfully, data, error, fetchCityWeather }) => {
-    return (
-        <Wrapper>
-            <h2>Weather App</h2>
-            <Search
-                size="large"
-                placeholder="Enter city name..."
-                style={{ width: 200 }}
-                allowClear
-                onSearch={value => fetchCityWeather(value)}
-            />
-            {isFetching && <div>Loading data...</div>}
-            {fetchedSuccessfully && data && <Weather />}
-            {error && error.code !== 200 && <ErrorBox message={error.body.message} />}
-        </Wrapper>
-    );
-};
+export const HomePage = ({ isFetching, fetchedSuccessfully, data, error, fetchCityWeather }) => (
+    <PageWrapper>
+        <SectionHeader>Weather App</SectionHeader>
+        <Search
+            size="large"
+            placeholder="Enter city name..."
+            style={{ width: 200 }}
+            allowClear
+            onSearch={value => fetchCityWeather(value)}
+        />
+        {isFetching && <div>Loading data...</div>}
+        {fetchedSuccessfully && data && <WeathersList />}
+        {error && error.code !== 200 && <ErrorBox message={error.body.message} />}
+    </PageWrapper>
+);
 
 const mapStateToProps = state => ({
-    isFetching: isWeatherFetchingSelector(state),
-    fetchedSuccessfully: weatherFetchedSuccessfullySelector(state),
-    data: weatherDataSelector(state),
-    error: weatherErrorSelector(state),
+    isFetching: isWeathersListFetchingSelector(state),
+    fetchedSuccessfully: weathersListFetchedSuccessfullySelector(state),
+    data: !!weathersListDataSelector(state),
+    error: weathersListErrorSelector(state),
 });
 
 export default connect(

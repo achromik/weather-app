@@ -4,7 +4,9 @@ export const sizes = {
         xs: '0.5rem',
     },
     font: {
+        small: '0.7rem',
         normal: '1rem',
+        medium: '1.25rem',
         large: '2rem',
         big: '3.5rem',
     },
