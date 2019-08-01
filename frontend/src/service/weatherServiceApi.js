@@ -1,10 +1,11 @@
+import { makeQueryParams } from 'src/common/helpers/makeQueryParams';
 import { apiKey, apiUrl } from 'src/config/weatherApi';
 
 const weatherUri = `${apiUrl}weather?appid=${apiKey}`;
 const findWeatherUri = `${apiUrl}find?appid=${apiKey}`;
 
-const fetchData = (url, metric) =>
-    fetch(`${url}${metric ? '&units=metric' : ''}`)
+const fetchData = (url, units = 'metric') =>
+    fetch(`${url}${units ? `&units=${units}` : ''}`)
         .then(handleErrors)
         .then(async response => response.json())
         .then(data => data)
@@ -23,11 +24,8 @@ const handleErrors = async response => {
     return response;
 };
 
-export const getCoordsWeather = (geolocation, metric = true) => {
-    const { latitude, longitude } = geolocation;
-
-    return fetchData(`${weatherUri}&lat=${latitude}&lon=${longitude}`, metric);
+export const getCoordsWeather = geolocation => {
+    return fetchData(`${weatherUri}&${makeQueryParams(geolocation)}`);
 };
 
-export const getCityWeather = (cityName, metric = true) =>
-    fetchData(`${findWeatherUri}&q=${cityName}`, metric);
+export const getCityWeather = params => fetchData(`${findWeatherUri}&${makeQueryParams(params)}`);
