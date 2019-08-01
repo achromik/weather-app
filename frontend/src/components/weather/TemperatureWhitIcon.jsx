@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { iconWeatherURL } from 'src/config/iconWeatherURL';
+
 const Row = styled.div`
     width: 100%;
     display: flex;
@@ -27,7 +29,7 @@ const Img = styled.img`
 export const TemperatureWithIcon = ({ temp, icon }) => (
     <Row>
         <Col>
-            <Img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+            <Img src={iconWeatherURL(icon)} />
         </Col>
         <Col>
             <Temp>{temp.temp.toFixed(1)} °C</Temp>

@@ -1,4 +1,5 @@
 import { getCityWeather, getCoordsWeather } from 'src/service/weatherServiceApi';
+import { fetchAqi } from 'src/features/airQuality/actions/airQualityActions';
 
 export const FETCH_CITY_WEATHER_BEGIN = 'FETCH_CITY_WEATHER_BEGIN';
 export const fetchCityWeatherBegin = () => ({
@@ -34,10 +35,10 @@ export const fetchLocationWeatherFailure = error => ({
     payload: error,
 });
 
-export const fetchCityWeather = cityName => async dispatch => {
-    dispatch(fetchCityWeatherBegin(cityName));
+export const fetchCityWeather = city => async dispatch => {
+    dispatch(fetchCityWeatherBegin());
 
-    return await getCityWeather(cityName)
+    return await getCityWeather({ q: city })
         .then(data => {
             dispatch(fetchCityWeatherSuccess(data));
         })
@@ -46,8 +47,13 @@ export const fetchCityWeather = cityName => async dispatch => {
 
 export const fetchLocationWeather = geolocation => async dispatch => {
     dispatch(fetchLocationWeatherBegin());
+    const { latitude: lat, longitude: lon } = geolocation;
 
-    return await getCoordsWeather(geolocation)
-        .then(data => dispatch(fetchLocationWeatherSuccess(data)))
+    return await getCoordsWeather({ lat, lon })
+        .then(data => {
+            dispatch(fetchLocationWeatherSuccess(data));
+            dispatch(fetchAqi(geolocation));
+        })
+
         .catch(error => dispatch(fetchLocationWeatherFailure(error)));
 };

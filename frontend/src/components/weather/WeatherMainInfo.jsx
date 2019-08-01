@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { colors } from 'src/config/variables';
-import { Wrapper } from 'src/common/Wrapper';
+import { Wrapper } from 'src/common/components/Wrapper';
 import { weatherDataSelector } from 'src/features/weather/selectors/weatherSelectors';
 import { TemperatureWithIcon } from 'src/components/weather/TemperatureWhitIcon';
 
-const Header = styled.p`
+export const Header = styled.p`
     font-size: 1.5rem;
     font-weight: 600;
     color: ${colors.primary};

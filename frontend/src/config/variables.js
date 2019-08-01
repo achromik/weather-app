@@ -3,12 +3,21 @@ export const sizes = {
         lg: '1rem',
         xs: '0.5rem',
     },
+    font: {
+        small: '0.7rem',
+        normal: '1rem',
+        medium: '1.25rem',
+        large: '2rem',
+        big: '3.5rem',
+    },
 };
 
 export const colors = {
     primary: '#48484F',
     blue: '#91b1da',
-    bgGradient: 'linear-gradient(to right, #B993D6 0%, #8CA6DB 51%, #B993D6 100%)',
+    primaryText: '#FFF',
+    secondaryText: '#48484F',
+    bgGradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
 };
 
 export const breakpoints = {
