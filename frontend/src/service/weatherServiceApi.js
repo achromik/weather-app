@@ -8,7 +8,6 @@ const fetchData = (url, units = 'metric') =>
     fetch(`${url}${units ? `&units=${units}` : ''}`)
         .then(handleErrors)
         .then(async response => response.json())
-        .then(data => data)
         .catch(error => {
             throw error;
         });
