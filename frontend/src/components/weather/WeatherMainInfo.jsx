@@ -10,7 +10,7 @@ import { TemperatureWithIcon } from 'src/components/weather/TemperatureWhitIcon'
 export const Header = styled.p`
     font-size: 1.5rem;
     font-weight: 600;
-    color: ${colors.primary};
+    color: ${colors.primaryText};
 `;
 
 export const WeatherMainInfoRaw = ({ cityName, country, weather, temp }) => (
