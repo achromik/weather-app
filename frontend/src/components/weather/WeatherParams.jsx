@@ -5,12 +5,12 @@ import styled from 'styled-components';
 import { weatherDataSelector } from 'src/features/weather/selectors/weatherSelectors';
 import { Wrapper } from 'src/common/components/Wrapper';
 import { DataTile } from 'src/common/components/DataTile';
-import { AqiContainer } from 'Components/coordsWeather/aqiContainer';
+import { AqiContainer } from 'Components/coordsWeather/AqiContainer';
 
 const Row = styled.div`
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;

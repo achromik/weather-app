@@ -47,6 +47,7 @@ export const GetLocationRaw = ({ fetchLocationWeather }) => {
                 onClick={handleGetLocation}
                 loading={!active}
                 style={{ width: '200px' }}
+                size="large"
             >
                 {active && <Icon component={TargetPointerGPS} style={{ width: '16px' }} />}
                 Current location

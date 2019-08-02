@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { colors } from 'src/config/variables';
 
 const Tile = styled.div`
-    flex: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +12,7 @@ const Tile = styled.div`
     margin: 3px;
     padding: 5px 10px;
     flex-wrap: wrap;
-    max-width: 150px;
+    width: 140px;
     color: ${({ bgColor }) => (bgColor ? colors.primaryText : colors.primary)};
     background-color: ${({ bgColor }) => bgColor || '#eee'};
 `;
