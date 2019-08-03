@@ -19,5 +19,8 @@ exports[`WeatherMainInfo renders 1`] = `
       }
     }
   />
+  <styled.p>
+    Clear sky
+  </styled.p>
 </styled.div>
 `;

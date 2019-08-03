@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { colors } from 'src/config/variables';
+import { sentenceCase } from 'src/common/helpers/sentenceCase';
 import { Wrapper } from 'src/common/components/Wrapper';
 import { weatherDataSelector } from 'src/features/weather/selectors/weatherSelectors';
 import { TemperatureWithIcon } from 'src/components/weather/TemperatureWhitIcon';
 
-export const Header = styled.p`
+export const Description = styled.p`
     font-size: 1.5rem;
     font-weight: 600;
     color: ${colors.primaryText};
@@ -15,10 +16,11 @@ export const Header = styled.p`
 
 export const WeatherMainInfoRaw = ({ cityName, country, weather, temp }) => (
     <Wrapper>
-        <Header>
+        <Description>
             {cityName}, {country}
-        </Header>
+        </Description>
         <TemperatureWithIcon temp={temp} icon={weather.icon} />
+        <Description>{sentenceCase(weather.description)}</Description>
     </Wrapper>
 );
 
