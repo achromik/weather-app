@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import { WeatherMainInfo } from 'src/components/weather/WeatherMainInfo';
 import { WeatherParams } from 'src/components/weather/WeatherParams';
