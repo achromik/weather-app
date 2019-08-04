@@ -1,11 +1,11 @@
 export const sites = [
     {
-        name: 'Home',
-        icon: 'home',
+        name: 'Find',
+        icon: 'eye',
         path: '/',
     },
     {
-        name: 'Weather',
+        name: 'Current',
         icon: 'cloud',
         path: '/weather',
     },

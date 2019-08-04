@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HomePage container renders 1`] = `
+exports[`FindWeather container renders 1`] = `
 <styled.div>
-  <h2>
+  <styled.h2>
     Weather App
-  </h2>
+  </styled.h2>
   <Search
     allowClear={true}
     enterButton={false}
@@ -17,15 +17,15 @@ exports[`HomePage container renders 1`] = `
       }
     }
   />
-  <Weather />
+  <Connect(WeathersList) />
 </styled.div>
 `;
 
-exports[`HomePage container renders while data is fetching 1`] = `
+exports[`FindWeather container renders while data is fetching 1`] = `
 <styled.div>
-  <h2>
+  <styled.h2>
     Weather App
-  </h2>
+  </styled.h2>
   <Search
     allowClear={true}
     enterButton={false}
@@ -38,17 +38,15 @@ exports[`HomePage container renders while data is fetching 1`] = `
       }
     }
   />
-  <div>
-    Loading data...
-  </div>
+  <Spinner />
 </styled.div>
 `;
 
-exports[`HomePage container renders with fetching error 1`] = `
+exports[`FindWeather container renders with fetching error 1`] = `
 <styled.div>
-  <h2>
+  <styled.h2>
     Weather App
-  </h2>
+  </styled.h2>
   <Search
     allowClear={true}
     enterButton={false}
@@ -67,11 +65,11 @@ exports[`HomePage container renders with fetching error 1`] = `
 </styled.div>
 `;
 
-exports[`HomePage container renders with no weather data 1`] = `
+exports[`FindWeather container renders with no weather data 1`] = `
 <styled.div>
-  <h2>
+  <styled.h2>
     Weather App
-  </h2>
+  </styled.h2>
   <Search
     allowClear={true}
     enterButton={false}

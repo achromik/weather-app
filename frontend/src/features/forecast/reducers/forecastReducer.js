@@ -1,31 +1,31 @@
 import {
-    FETCH_AQI_BEGIN,
-    FETCH_AQI_SUCCESS,
-    FETCH_AQI_FAILURE,
-} from 'src/features/airQuality/actions/airQualityActions';
+    FETCH_FORECAST_BEGIN,
+    FETCH_FORECAST_SUCCESS,
+    FETCH_FORECAST_FAILURE,
+} from 'src/features/forecast/actions/forecastActions';
 
-const initialState = {
+export const initialState = {
     isFetching: false,
     fetchedSuccessfully: false,
     data: {},
     error: {},
 };
 
-export const airQuality = (state = initialState, action) => {
+export const forecast = (state = initialState, action) => {
     switch (action.type) {
-        case FETCH_AQI_BEGIN:
+        case FETCH_FORECAST_BEGIN:
             return {
                 ...initialState,
                 isFetching: true,
             };
-        case FETCH_AQI_SUCCESS:
+        case FETCH_FORECAST_SUCCESS:
             return {
                 ...state,
                 isFetching: false,
                 fetchedSuccessfully: true,
                 data: action.payload,
             };
-        case FETCH_AQI_FAILURE:
+        case FETCH_FORECAST_FAILURE:
             return {
                 ...state,
                 isFetching: false,

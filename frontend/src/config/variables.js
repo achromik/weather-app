@@ -28,3 +28,12 @@ export const breakpoints = {
     xl: '@media (min-width: 1200px)',
     xxl: '@media(min-width: 1440px)',
 };
+
+export const aqiColors = {
+    good: '#009b6b',
+    moderate: '#ffdc55',
+    unhealthySensitive: '#ff9446',
+    unhealthy: '#DD0034',
+    veryUnhealthy: '#6d0093',
+    hazardous: '#890023',
+};

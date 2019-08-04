@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { iconWeatherURL } from 'src/config/iconWeatherURL';
+import { colors } from 'src/config/variables';
 
 const Row = styled.div`
     width: 100%;
@@ -18,7 +19,7 @@ const Col = styled.div`
 const Temp = styled.p`
     font-size: 2.5rem;
     font-weight: 800;
-    color: #000;
+    color: ${colors.primaryText};
     margin: 0;
 `;
 

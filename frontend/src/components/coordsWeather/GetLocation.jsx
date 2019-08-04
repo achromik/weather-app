@@ -1,28 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
 import { Button, Alert, Icon } from 'antd';
 
 import { SectionWrapper } from 'src/common/components/SectionWrapper';
-import { fetchLocationWeather } from 'src/features/weather/actions/weatherActions';
 import { TargetPointerGPS } from 'src/common/components/TargetPointerGPS';
 
-export const GetLocationRaw = ({ fetchLocationWeather }) => {
-    const navigatorGeolocation = !!navigator.geolocation;
+export const GetLocation = ({ onSuccess }) => {
+    const [active, setActive] = useState(true);
+    const [geoError, setGeoError] = useState('');
+    const navGeo = navigator.geolocation;
 
     const handleGetLocation = () => {
-        navigator.geolocation.getCurrentPosition(
+        if (!navGeo) {
+            setGeoError('Geolocation is not supported by your browser.');
+            return;
+        }
+
+        setActive(false);
+        setGeoError('');
+        navGeo.getCurrentPosition(
             position => {
-                fetchLocationWeather({
+                setActive(true);
+                onSuccess({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude,
                 });
             },
             err => {
-                console.log(err);
+                setActive('true');
+                setGeoError(err.message);
             },
             {
                 enableHighAccuracy: false,
-                timeout: Infinity,
+                timeout: 10000,
                 maximumAge: 0,
             },
         );
@@ -30,25 +39,19 @@ export const GetLocationRaw = ({ fetchLocationWeather }) => {
 
     return (
         <SectionWrapper>
-            {navigatorGeolocation && (
-                <Button type="primary" shape="round" onClick={handleGetLocation}>
-                    <Icon component={TargetPointerGPS} style={{ maxWidth: '15px' }} />
-                    Current location
-                </Button>
-            )}
-            {!navigatorGeolocation && (
-                <Alert
-                    message="Error"
-                    description="This is an error message about copywriting."
-                    type="error"
-                    showIcon
-                />
-            )}
+            <Button
+                type="primary"
+                shape="round"
+                onClick={handleGetLocation}
+                loading={!active}
+                style={{ width: '200px' }}
+                size="large"
+            >
+                {active && <Icon component={TargetPointerGPS} style={{ width: '16px' }} />}
+                Current location
+            </Button>
+
+            {geoError && <Alert message="Error" description={geoError} type="error" showIcon />}
         </SectionWrapper>
     );
 };
-
-export const GetLocation = connect(
-    () => ({}),
-    { fetchLocationWeather },
-)(GetLocationRaw);
