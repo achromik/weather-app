@@ -37,7 +37,7 @@ export const FindWeather = ({ isFetching, fetchedSuccessfully, data, error, fetc
 const mapStateToProps = state => ({
     isFetching: isWeathersListFetchingSelector(state),
     fetchedSuccessfully: weathersListFetchedSuccessfullySelector(state),
-    data: !!weathersListDataSelector(state),
+    data: weathersListDataSelector(state),
     error: weathersListErrorSelector(state),
 });
 

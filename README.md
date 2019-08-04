@@ -1,3 +1,38 @@
+
+# WeatherApp
+
+## Installation with Docker
+
+Prerequisites: *docker*, *docker-compose*, *make*
+
+In the root project directory please enter:
+
+### `make build-dev`
+
+Runs the dockerized version of this app.<br>
+Open http://localhost:8050 to view it in the browser.
+
+## Installation w/o Docker
+
+Please do the following commands:
+
+Using Yarn
+
+```
+yarn
+yarn start
+```
+
+Using npm
+```
+npm install
+npm start
+```
+
+Open http://localhost:3000 to view it in the browser.
+
+#
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

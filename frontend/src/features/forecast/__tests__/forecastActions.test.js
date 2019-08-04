@@ -32,7 +32,7 @@ describe('fetchForecast', () => {
         });
     });
 
-    it('handles fetching forecast error', async () => {
+    it('handles errors', async () => {
         const dispatch = jest.fn();
         const getForecast = jest.fn();
 
