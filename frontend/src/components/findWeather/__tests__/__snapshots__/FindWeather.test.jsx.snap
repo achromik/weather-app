@@ -38,9 +38,7 @@ exports[`FindWeather container renders while data is fetching 1`] = `
       }
     }
   />
-  <div>
-    Loading data...
-  </div>
+  <Spinner />
 </styled.div>
 `;
 

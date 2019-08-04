@@ -14,6 +14,7 @@ import {
 import { ErrorBox } from 'src/common/components/ErrorBox/ErrorBox';
 import { SectionHeader } from 'src/common/components/SectionHeader';
 import WeathersList from 'src/components/weathersList/WeathersList';
+import { Spinner } from 'src/common/components/Spinner';
 
 const { Search } = Input;
 
@@ -27,7 +28,7 @@ export const FindWeather = ({ isFetching, fetchedSuccessfully, data, error, fetc
             allowClear
             onSearch={value => fetchCityWeather(value)}
         />
-        {isFetching && <div>Loading data...</div>}
+        {isFetching && <Spinner />}
         {fetchedSuccessfully && !isObjectEmpty(data) && <WeathersList />}
         {!isObjectEmpty(error) && error.code !== 200 && <ErrorBox message={error.body.message} />}
     </PageWrapper>

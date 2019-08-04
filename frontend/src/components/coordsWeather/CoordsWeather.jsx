@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { isObjectEmpty } from 'src/common/helpers/isObjectEmpty';
 import { fetchLocationWeather } from 'src/features/weather/actions/weatherActions';
 import { PageWrapper } from 'src/common/components/PageWrapper';
-import { GetLocationRaw } from 'src/components/coordsWeather/GetLocation';
+import { GetLocation } from 'src/components/coordsWeather/GetLocation';
 import { Weather } from 'src/components/weather/Weather';
 import {
     isWeatherFetchingSelector,
@@ -13,6 +13,7 @@ import {
     weatherFetchedSuccessfullySelector,
 } from 'src/features/weather/selectors/weatherSelectors';
 import { ErrorBox } from 'src/common/components/ErrorBox/ErrorBox';
+import { Spinner } from 'src/common/components/Spinner';
 
 export const CoordsWeather = ({
     isFetching,
@@ -22,8 +23,8 @@ export const CoordsWeather = ({
     fetchLocationWeather,
 }) => (
     <PageWrapper>
-        <GetLocationRaw onSuccess={geolocation => fetchLocationWeather(geolocation)} />
-        {isFetching && <div>Loading data...</div>}
+        <GetLocation onSuccess={geolocation => fetchLocationWeather(geolocation)} />
+        {isFetching && <Spinner />}
         {!isFetching && fetchedSuccessfully && !isObjectEmpty(data) && <Weather />}
         {!isObjectEmpty(error) && error.code !== 200 && <ErrorBox message={error.body.message} />}
     </PageWrapper>
