@@ -3,7 +3,7 @@ import { apiKey, apiUrl } from 'src/config/weatherApi';
 
 const weatherUri = `${apiUrl}weather?appid=${apiKey}`;
 const findWeatherUri = `${apiUrl}find?appid=${apiKey}`;
-const forecastUri = `${apiUrl}forecast/daily?appid=${apiKey}`;
+const forecastUri = `${apiUrl}forecast?appid=${apiKey}`;
 
 const fetchData = (url, units = 'metric') =>
     fetch(`${url}${units ? `&units=${units}` : ''}`)
@@ -30,4 +30,4 @@ export const getCoordsWeather = geolocation => {
 
 export const getCityWeather = params => fetchData(`${findWeatherUri}&${makeQueryParams(params)}`);
 
-export const getForecast = params => fetchData(`${forecastUri}${makeQueryParams(params)}`);
+export const getForecast = params => fetchData(`${forecastUri}&${makeQueryParams(params)}`);

@@ -47,6 +47,7 @@
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.14.0",
         "enzyme-to-json": "^3.3.5",
+        "fetch-mock": "^7.3.9",
         "prettier": "^1.18.2",
         "react-app-rewired": "^2.1.3"
     }
