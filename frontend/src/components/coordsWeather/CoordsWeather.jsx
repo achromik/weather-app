@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { isObjectEmpty } from 'src/common/helpers/isObjectEmpty';
 import { PageWrapper } from 'src/common/components/PageWrapper';
 import { GetLocation } from 'src/components/coordsWeather/GetLocation';
 import { Weather } from 'src/components/weather/Weather';
@@ -16,8 +17,8 @@ export const CoordsWeather = ({ isFetching, fetchedSuccessfully, data, error }) 
     <PageWrapper>
         <GetLocation />
         {isFetching && <div>Loading data...</div>}
-        {!isFetching && fetchedSuccessfully && data && <Weather />}
-        {error && error.code !== 200 && <ErrorBox message={error.body.message} />}
+        {!isFetching && fetchedSuccessfully && !isObjectEmpty(data) && <Weather />}
+        {!isObjectEmpty(error) && error.code !== 200 && <ErrorBox message={error.body.message} />}
     </PageWrapper>
 );
 

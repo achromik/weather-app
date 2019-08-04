@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Input } from 'antd';
 
+import { isObjectEmpty } from 'src/common/helpers/isObjectEmpty';
 import { PageWrapper } from 'src/common/components/PageWrapper';
 import { fetchCityWeather } from 'src/features/weather/actions/weatherActions';
 import {
@@ -27,8 +28,8 @@ export const HomePage = ({ isFetching, fetchedSuccessfully, data, error, fetchCi
             onSearch={value => fetchCityWeather(value)}
         />
         {isFetching && <div>Loading data...</div>}
-        {fetchedSuccessfully && data && <WeathersList />}
-        {error && error.code !== 200 && <ErrorBox message={error.body.message} />}
+        {fetchedSuccessfully && !isObjectEmpty(data) && <WeathersList />}
+        {!isObjectEmpty(error) && error.code !== 200 && <ErrorBox message={error.body.message} />}
     </PageWrapper>
 );
 

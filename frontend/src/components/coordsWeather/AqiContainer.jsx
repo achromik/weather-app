@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { DataTile } from 'src/common/components/DataTile';
 import { getAqiColor } from 'src/common/helpers/getAqiColor';
 import { getAirQualityData } from 'src/features/airQuality/selectors/airQualitySelector';
+import { isObjectEmpty } from 'src/common/helpers/isObjectEmpty';
 
 export const AqiContainerRaw = ({ aqiData }) => (
     <>
-        {aqiData && (
+        {!isObjectEmpty(aqiData) && (
             <DataTile
                 name="AQI"
                 value={aqiData.data.aqi}

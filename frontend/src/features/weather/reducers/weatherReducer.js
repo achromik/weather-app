@@ -7,8 +7,8 @@ import {
 const initialState = {
     isFetching: false,
     fetchedSuccessfully: false,
-    data: undefined,
-    error: undefined,
+    data: {},
+    error: {},
 };
 
 export const weather = (state = initialState, action) => {
