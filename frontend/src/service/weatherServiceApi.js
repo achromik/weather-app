@@ -3,7 +3,7 @@ import { apiKey, apiUrl } from 'src/config/weatherApi';
 
 const weatherUri = `${apiUrl}weather?appid=${apiKey}`;
 const findWeatherUri = `${apiUrl}find?appid=${apiKey}`;
-const forecastUri = `${apiUrl}forecast/daily?appid=${appKey}`;
+const forecastUri = `${apiUrl}forecast/daily?appid=${apiKey}`;
 
 const fetchData = (url, units = 'metric') =>
     fetch(`${url}${units ? `&units=${units}` : ''}`)
