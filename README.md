@@ -20,14 +20,20 @@ Open http://localhost:8050 to view it in the browser.
 
 Please do the following commands:
 
-Using Yarn
+Go to the folder `frontend` typing:
+
+```
+cd frontend
+```
+
+Using **yarn**
 
 ```
 yarn
 yarn start
 ```
 
-Using npm
+Using **npm**
 ```
 npm install
 npm start
