@@ -1,6 +1,10 @@
 
 # WeatherApp
 
+LIVE VERSION https://wapp.now.sh/
+
+##
+
 ## Installation with Docker
 
 Prerequisites: *docker*, *docker-compose*, *make*
