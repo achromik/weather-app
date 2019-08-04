@@ -1,7 +1,6 @@
 import { aqiColors } from 'src/config/variables';
 
 export const getAqiColor = value => {
-    console.log(typeof value);
     switch (true) {
         case value <= 50:
             return aqiColors.good;
