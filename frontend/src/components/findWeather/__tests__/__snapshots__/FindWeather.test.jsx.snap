@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HomePage container renders 1`] = `
+exports[`FindWeather container renders 1`] = `
 <styled.div>
   <styled.h2>
     Weather App
@@ -21,7 +21,7 @@ exports[`HomePage container renders 1`] = `
 </styled.div>
 `;
 
-exports[`HomePage container renders while data is fetching 1`] = `
+exports[`FindWeather container renders while data is fetching 1`] = `
 <styled.div>
   <styled.h2>
     Weather App
@@ -44,7 +44,7 @@ exports[`HomePage container renders while data is fetching 1`] = `
 </styled.div>
 `;
 
-exports[`HomePage container renders with fetching error 1`] = `
+exports[`FindWeather container renders with fetching error 1`] = `
 <styled.div>
   <styled.h2>
     Weather App
@@ -67,7 +67,7 @@ exports[`HomePage container renders with fetching error 1`] = `
 </styled.div>
 `;
 
-exports[`HomePage container renders with no weather data 1`] = `
+exports[`FindWeather container renders with no weather data 1`] = `
 <styled.div>
   <styled.h2>
     Weather App

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 
-import { HomePage } from '../HomePage';
+import { FindWeather } from '../FindWeather';
 
 const mockProps = {
     isFetching: false,
@@ -41,13 +41,13 @@ const mockProps = {
         name: 'London',
         cod: 200,
     },
-    error: undefined,
+    error: {},
 };
 
 const mockErrorProps = {
     isFetching: false,
     fetchedSuccessfully: true,
-    data: undefined,
+    data: {},
     error: {
         body: { cod: '404', message: 'city not found' },
         code: 404,
@@ -57,28 +57,28 @@ const mockErrorProps = {
 const mockFetchingDataProps = {
     isFetching: true,
     fetchedSuccessfully: false,
-    data: undefined,
-    error: undefined,
+    data: {},
+    error: {},
 };
 
-describe('HomePage container', () => {
+describe('FindWeather container', () => {
     it('renders', () => {
-        const wrapper = shallow(<HomePage {...mockProps} />);
+        const wrapper = shallow(<FindWeather {...mockProps} />);
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('renders with no weather data', () => {
-        const wrapper = shallow(<HomePage {...mockProps} data={undefined} />);
+        const wrapper = shallow(<FindWeather {...mockProps} data={{}} />);
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('renders with fetching error', () => {
-        const wrapper = shallow(<HomePage {...mockErrorProps} />);
+        const wrapper = shallow(<FindWeather {...mockErrorProps} />);
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 
     it('renders while data is fetching', () => {
-        const wrapper = shallow(<HomePage {...mockFetchingDataProps} />);
+        const wrapper = shallow(<FindWeather {...mockFetchingDataProps} />);
         expect(shallowToJson(wrapper)).toMatchSnapshot();
     });
 });

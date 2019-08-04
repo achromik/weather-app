@@ -17,7 +17,7 @@ import WeathersList from 'src/components/weathersList/WeathersList';
 
 const { Search } = Input;
 
-export const HomePage = ({ isFetching, fetchedSuccessfully, data, error, fetchCityWeather }) => (
+export const FindWeather = ({ isFetching, fetchedSuccessfully, data, error, fetchCityWeather }) => (
     <PageWrapper>
         <SectionHeader>Weather App</SectionHeader>
         <Search
@@ -43,4 +43,4 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { fetchCityWeather },
-)(HomePage);
+)(FindWeather);
