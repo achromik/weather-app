@@ -20,7 +20,7 @@
         "start": " react-app-rewired start",
         "build": " react-app-rewired build",
         "test": "NODE_PATH=./ react-app-rewired test",
-        "test:watch": "NODE_PATH=./ react-app-rewired test --watchAll",
+        "test:watch": "NODE_PATH=./ react-app-rewired test --watchAll --coverage",
         "eject": "react-app-rewired eject"
     },
     "eslintConfig": {
@@ -39,6 +39,10 @@
         ]
     },
     "devDependencies": {
+        "@babel/core": "^7.5.5",
+        "@babel/preset-env": "^7.5.5",
+        "@babel/preset-react": "^7.0.0",
+        "babel-jest": "^24.8.0",
         "customize-cra": "^0.4.1",
         "enzyme": "^3.10.0",
         "enzyme-adapter-react-16": "^1.14.0",
