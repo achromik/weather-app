@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { connect } from 'react-redux';
 import { Button, Alert, Icon } from 'antd';
 
 import { SectionWrapper } from 'src/common/components/SectionWrapper';
-import { fetchLocationWeather } from 'src/features/weather/actions/weatherActions';
 import { TargetPointerGPS } from 'src/common/components/TargetPointerGPS';
 
-export const GetLocationRaw = ({ fetchLocationWeather }) => {
+export const GetLocation = ({ onSuccess }) => {
     const [active, setActive] = useState(true);
     const [geoError, setGeoError] = useState('');
     const navGeo = navigator.geolocation;
@@ -22,7 +20,7 @@ export const GetLocationRaw = ({ fetchLocationWeather }) => {
         navGeo.getCurrentPosition(
             position => {
                 setActive(true);
-                fetchLocationWeather({
+                onSuccess({
                     latitude: position.coords.latitude,
                     longitude: position.coords.longitude,
                 });
@@ -57,8 +55,3 @@ export const GetLocationRaw = ({ fetchLocationWeather }) => {
         </SectionWrapper>
     );
 };
-
-export const GetLocation = connect(
-    null,
-    { fetchLocationWeather },
-)(GetLocationRaw);
