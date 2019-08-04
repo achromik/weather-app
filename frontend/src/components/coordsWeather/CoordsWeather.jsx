@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { isObjectEmpty } from 'src/common/helpers/isObjectEmpty';
+import { fetchLocationWeather } from 'src/features/weather/actions/weatherActions';
 import { PageWrapper } from 'src/common/components/PageWrapper';
-import { GetLocation } from 'src/components/coordsWeather/GetLocation';
+import { GetLocationRaw } from 'src/components/coordsWeather/GetLocation';
 import { Weather } from 'src/components/weather/Weather';
 import {
     isWeatherFetchingSelector,
@@ -13,9 +14,15 @@ import {
 } from 'src/features/weather/selectors/weatherSelectors';
 import { ErrorBox } from 'src/common/components/ErrorBox/ErrorBox';
 
-export const CoordsWeather = ({ isFetching, fetchedSuccessfully, data, error }) => (
+export const CoordsWeather = ({
+    isFetching,
+    fetchedSuccessfully,
+    data,
+    error,
+    fetchLocationWeather,
+}) => (
     <PageWrapper>
-        <GetLocation />
+        <GetLocationRaw onSuccess={geolocation => fetchLocationWeather(geolocation)} />
         {isFetching && <div>Loading data...</div>}
         {!isFetching && fetchedSuccessfully && !isObjectEmpty(data) && <Weather />}
         {!isObjectEmpty(error) && error.code !== 200 && <ErrorBox message={error.body.message} />}
@@ -29,4 +36,7 @@ const mapStateToProps = state => ({
     error: weatherErrorSelector(state),
 });
 
-export default connect(mapStateToProps)(CoordsWeather);
+export default connect(
+    mapStateToProps,
+    { fetchLocationWeather },
+)(CoordsWeather);
